@@ -5,7 +5,7 @@ metadata:
   labels:
     app: example-web-app
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: example-web-app
   ports:
