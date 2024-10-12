@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-web-app-deployment
+  labels:
+    app: example-web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example-web-app
+  template:
+    metadata:
+      labels:
+        app: example-web-app
+    spec:
+      containers:
+      - name: example-web-app-deployment
+        image: kernie/example-web-app
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
